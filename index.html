@@ -9,19 +9,27 @@
 </head>
 <body>
 
+  <!-- ===== NAVBAR ===== -->
+  <!-- HW2 - 2.1 Task 1: Flexbox Navigation (completed here)
+       .navbar is the flex container: .logo (my name) sits on the left,
+       .nav-links sits on the right. Styles are in style.css under
+       "HW2 - 2.1 TASK 1: FLEXBOX NAVIGATION". -->
+  <nav class="navbar">
+    <a href="#" class="logo">Rayat Chowdhury</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#coursework">Coursework</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- finished of HW2 - 2.1 Task 1: Flexbox Navigation -->
+
   <!-- ===== HEADER ===== -->
   <header id="site-header">
     <img src="assets/selfie.jpg" alt="Pic Of Me" class="profile-photo">
     <h1>Rayat Chowdhury</h1>
     <p class="tagline">Computer Science Student &middot; Aspiring Software Engineer</p>
-
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#coursework">Coursework</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
@@ -39,6 +47,46 @@
         Driven by determination and continuous learning.
       </p>
     </section>
+
+    <!-- HW2 - 2.2 Task 2: The Grid Showcase (completed here)
+         .projects-grid uses display: grid -> 3 columns on desktop.
+         Each .project-card has an image, a title, and the stuff i did.
+         Styles are in style.css under "-->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <img src="assets/flowstate.svg" alt="FlowState project cover">
+          <h3>FlowState</h3>
+          <p>
+            Co-founded an AI startup focused on interview preparation and speech improvement, 
+            helping students and professionals build the technical and soft skills needed to perform confidently in interviews.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/lb.svg" alt="Load Bearing">
+          <h3>Load Bearing</h3>
+          <p>
+            Load Bearing is a hands-on scaling lab. Each feature is built the naive way first, 
+            pushed until it breaks under load, then fixed, and the fix is proven with before/after k6 numbers. 
+            No claim goes in this README without a measurement behind it.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <img src="assets/checkpoint.svg" alt="CheckPoint project cover">
+          <h3>CheckPoint</h3>
+          <p>
+            My own REST API project, designed and tested end to end with a
+            dedicated Postman workspace.
+          </p>
+        </article>
+
+      </div>
+    </section>
+    <!-- End of HW2 - 2.2 Task 2: The Grid Showcase -->
 
     <section id="coursework">
       <h2>Relevant Coursework</h2>

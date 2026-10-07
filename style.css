@@ -115,18 +115,113 @@ footer {
   margin-top: 0;
 }
 
-.nav-links {
-  list-style: none;
-  padding: 0;
+
+/* ==========================================================
+   HW2 - 2.1 TASK 1: FLEXBOX NAVIGATION (completed here)
+   - display: flex on .navbar -> name/logo left, links right
+   - justify-content + align-items -> horizontal + vertical alignment
+   - padding + :hover effects on links -> look interactive
+   ========================================================== */
+
+/* Task 1 - Requirement 1 & 2: display: flex + justify-content + align-items
+   Outer flex container: logo on the left, links on the right */
+.navbar {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between; /* pushes logo + links to opposite ends (main axis) */
+  align-items: center;            /* vertically centers them (cross axis) */
+  padding: 1rem 2rem;
+  background-color: #12305a;
+  position: sticky;               /* navbar stays at the top while scrolling */
+  top: 0;
 }
 
-.nav-links a {
+.logo {
   color: #ffffff;
+  font-size: 1.25rem;
   font-weight: bold;
 }
+
+.logo:hover {
+  text-decoration: none;
+}
+
+/* Task 1 - Requirement 1: inner flex container puts the <li> links in a row */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Task 1 - Requirement 3: padding on the links for a bigger clickable area */
+.nav-links a {
+  display: block;                 /* lets padding make a bigger clickable box */
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+/* Task 1 - Requirement 3: hover effect so links look interactive.
+   .nav-links a:hover (0-2-1) beats a:hover (0-1-1),
+   so the nav links get a background highlight instead of an underline */
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+/* ========== END OF HW2 - 2.1 TASK 1: FLEXBOX NAVIGATION ========== */
+
+
+/* ==========================================================
+   HW2 - 2.2 TASK 2:
+   - display: grid on .projects-grid -> 2D layout
+   - grid-template-columns: repeat(3, 1fr) -> 3 columns on desktop
+   - grid-gap -> consistent spacing between cards
+   ========================================================== */
+
+/* Task 2 - Requirements 1, 2 & 3: display: grid, 3 columns, grid-gap */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal-width columns */
+  grid-gap: 1.5rem;                        /* space between rows AND columns */
+}
+
+/* Task 2 - Requirement 4: each card holds an image, title, and description */
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #dde3ec;
+  border-radius: 8px;
+  overflow: hidden;                        /* keeps the image inside the rounded corners */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.project-card img {
+  display: block;
+  width: 100%;                             /* image fills the card's width */
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 0.75rem 1rem 0.25rem;
+  color: #1a3d6d;
+}
+
+/* #projects .project-card p (1-1-1) beats the plain p rule (0-0-1) */
+#projects .project-card p {
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+/* ========== END OF HW2 - 2.2 TASK 2: THE GRID SHOWCASE ========== */
 
 
 /* 
@@ -171,3 +266,87 @@ p {
    dark gray, since p was the next rule that applied and then just opened live server to test out the colors from there.  
 
    */
+
+
+/* ==========================================================
+   HW2 - 2.3 TASK 3: 
+   - breakpoint: max-width: 768px (tablets + phones)
+   - navbar + nav links stack vertically (flex-direction: column)
+   - 3-column project grid collapses to 1 column
+   - font sizes adjusted for readability on small screens
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  /* Task 3 - Requirement 2a: navigation stacks vertically */
+  .navbar {
+    flex-direction: column;       /* logo on top, links underneath */
+    gap: 0.5rem;
+    padding: 1rem;
+    position: static;             /* turn off sticky so the taller stacked nav doesn't cover the page */
+  }
+
+  .nav-links {
+    flex-direction: column;       /* links go from a row to a column */
+    width: 100%;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  /* Task 3 - Requirement 2b: 3-column grid collapses into 1 column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Task 3 - Requirement 3: typography adjusted for mobile readability */
+  body {
+    font-size: 1rem;
+    line-height: 1.7;             /* a bit more line spacing on small screens */
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  #site-header h1 {               /* must match #site-header h1 specificity (1-0-1) to override it */
+    font-size: 1.75rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  th,
+  td {
+    font-size: 0.875rem;          /* smaller table text so all 3 columns fit */
+    padding: 8px;
+  }
+
+  /* Extra mobile spacing tweaks so content isn't cramped */
+  #site-header {
+    padding: 24px 16px 16px;
+  }
+
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  main {
+    padding: 12px;
+  }
+
+  section {
+    padding: 16px;
+  }
+}
+
+/* ========== finished homework ========== */

@@ -7,4 +7,5 @@
 # Question 2: If you used GenAI (ChatGPT, Claude, etc.) to help write code, you must include the prompt you used and explain one logic error the AI made that you had to fix manually. 
 
 - The prompt that I used for prompting to chat gpt is " Adjust the css to the specific margins that are acceptable for my class elements". One logic error that the AI made was it went ahead and chose to make almost every element blue for some reason and I had to go and change the edited colors to my specific liking. So I kept the blue where it was needed whereas the rest I just kept it white.
- 
+  
+<!-- Reflection Homework 2 --> 

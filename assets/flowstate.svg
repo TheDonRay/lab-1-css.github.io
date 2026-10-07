@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a3d6d"/><stop offset="1" stop-color="#1a73e8"/></linearGradient></defs>
+  <rect width="600" height="360" fill="url(#g)"/>
+  <path d="M190 170 Q245 110 300 170 T410 170" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/><path d="M190 210 Q245 150 300 210 T410 210" fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="14" stroke-linecap="round"/>
+  <text x="300" y="300" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff">FlowState</text>
+</svg>
