@@ -301,14 +301,14 @@ p {
   /* Task 3 - Requirement 3: typography adjusted for mobile readability */
   body {
     font-size: 1rem;
-    line-height: 1.7;             /* a bit more line spacing on small screens */
+    line-height: 1.7;             
   }
 
   .logo {
     font-size: 1.4rem;
   }
 
-  #site-header h1 {               /* must match #site-header h1 specificity (1-0-1) to override it */
+  #site-header h1 {              
     font-size: 1.75rem;
   }
 
